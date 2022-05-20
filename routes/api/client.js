@@ -28,10 +28,16 @@ router.put('/:clientId', async (req, res) => {
 })
 
 router.delete('/:clientId', (req, res) => {
+  const clientId = req.params.clientId;
+  if (clientId === null) {
+    res.json({ error: 'Client ID is required' })
+  }
   deleteById(req.params.clientId)
     .then(result => res.json(result))
     .catch(err => res.json({ error: err.message }));
 })
+
+
 
 
 module.exports = router

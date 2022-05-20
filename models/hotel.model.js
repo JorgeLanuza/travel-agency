@@ -1,27 +1,31 @@
 const { executeQuery, executeQueryOne } = require("../helpers/utils");
 
 const getAll = () => {
-  return executeQuery('select * from hoteles');
+  return executeQuery(
+    'SELECT * from HOTELES');
 }
 
 const create = ({ nombre, direccion, ciudad, num_estrellas, descripcion, tarifa }) => {
-  return executeQuery('insert into hoteles (nombre, direccion, ciudad, num_estrellas, descripcion, tarifa) values (?, ?, ?, ?, ?, ?)',
+  return executeQuery(
+    'INSERT into HOTELES (nombre, direccion, ciudad, num_estrellas, descripcion, tarifa) VALUES (?, ?, ?, ?, ?, ?)',
     [nombre, direccion, ciudad, num_estrellas, descripcion, tarifa]);
 }
 
 const getById = (pHotelId) => {
-  return executeQueryOne('select * from hoteles where id = ?', [pHotelId]);
+  return executeQueryOne(
+    'SELECT * from HOTELES where id = ?',
+    [pHotelId]);
 }
-
 
 const update = (pHotelId, { nombre, direccion, ciudad, num_estrellas, descripcion, tarifa }) => {
   return executeQuery(
-    "update hoteles set  nombre = ?, direccion = ?, ciudad = ?, num_estrellas = ?, descripcion = ?, tarifa = ?  where id = ?",
+    "UPDATE HOTELES set  nombre = ?, direccion = ?, ciudad = ?, num_estrellas = ?, descripcion = ?, tarifa = ?  where id = ?",
     [nombre, direccion, ciudad, num_estrellas, descripcion, tarifa, pHotelId]);
 };
 
 const deleteById = (pHotelId) => {
-  return executeQuery('delete from hoteles where id = ?',
+  return executeQuery(
+    'DELETE from HOTELES where id = ?',
     [pHotelId]);
 }
 

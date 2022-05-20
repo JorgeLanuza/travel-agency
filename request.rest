@@ -34,7 +34,7 @@ DELETE http://localhost:3000/api/Clients/2
 
 
 ###
-POST http://localhost:3000/api/Clients 
+POST http://localhost:3000/api/Clients/new/78
 Content-Type: application/json
 
 {
@@ -53,7 +53,8 @@ Hotels -->
 GET http://localhost:3000/api/hoteles
 
 ###
-POST http://localhost:3000/api/hotels Content-Type: application/json
+POST http://localhost:3000/api/hotels/new
+Content-Type: application/json
 
 {
     "nombre": "Hostal el torero",
@@ -64,7 +65,7 @@ POST http://localhost:3000/api/hotels Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/hotels/2
+PUT http://localhost:3000/api/hotels/edit/1
 Content-Type: application/json
 
 {
@@ -77,7 +78,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/api/hotels/3
+DELETE http://localhost:3000/api/hotels/delete/1
 
 Travels -->
 
@@ -85,7 +86,7 @@ Travels -->
 GET http://localhost:3000/api/travels
 
 ###
-POST http://localhost:3000/api/travels
+POST http://localhost:3000/api/travels/new/3
 Content-Type: application/json
 
 {
@@ -97,7 +98,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/travels/2 
+PUT http://localhost:3000/api/travels/edit/2 
 Content-Type: application/json
 
 {
@@ -109,13 +110,10 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/api/travels/3
+DELETE http://localhost:3000/api/travels/delete/3
 
 Travels/Clients -->
 
 ###
-GET http://localhost:3000/api/travels/clients
-
-###
-PUT http://localhost:3000/api/travels/3/clients/2
+POST http://localhost:3000/api/client/3/travel/2
 

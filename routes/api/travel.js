@@ -28,9 +28,23 @@ router.put('/:travelId', async (req, res) => {
 })
 
 router.delete('/:travelId', (req, res) => {
+  const travelId = req.params.clientId;
+  if (travelId === null) {
+    res.json({ error: 'Travel ID is required' })
+  }
   deleteById(req.params.travelId)
     .then(result => res.json(result))
     .catch(err => res.json({ error: err.message }));
+})
+
+router.post("/:idTravel/client/:idClient", async (req, res) => {
+  try {
+    const idClient = req.params.idClient;
+    const idTravel = req.params.idTravel;
+    const travelClient = await newTravelClient(idClient, idTravel);
+  } catch (err) {
+    res.send({ error: err.message })
+  }
 })
 
 
