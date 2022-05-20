@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { update, getById, deleteById, getAll } = require('../../models/client.model');
+const { update, getById, deleteById, getAll, create } = require('../../models/client.model');
 
 router.get('/', (req, res) => {
   getAll()

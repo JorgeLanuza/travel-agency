@@ -42,10 +42,9 @@ router.post("/:idTravel/client/:idClient", async (req, res) => {
     const idClient = req.params.idClient;
     const idTravel = req.params.idTravel;
     const travelClient = await newTravelClient(idClient, idTravel);
-  } catch (err) {
+  } catch (error) {
     res.send({ error: err.message })
   }
-
 })
 
 
