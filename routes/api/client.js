@@ -20,8 +20,8 @@ router.post('/', async (req, res) => {
 router.put('/:clientId', async (req, res) => {
   try {
     const result = await update(req.params.clientId, req.body)
-    const modClient = getById(req.params.clientId)
-    res.json(modClient)
+    const clientUpdated = getById(req.params.clientId)
+    res.json(clientUpdated)
   } catch (error) {
     res.json({ error: error.message })
   }

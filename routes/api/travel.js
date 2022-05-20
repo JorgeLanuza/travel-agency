@@ -1,8 +1,37 @@
 const router = require('express').Router();
+const { update, getById, deleteById, getAll } = require('../../models/travel.model');
+
+router.get('/', (req, res) => {
+  getAll()
+    .then(result => res.json(result))
+    .catch(error => res.json({ error: error.message }));
+})
+
+router.post('/', async (req, res) => {
+  try {
+    const result = await create(req.body)
+    const newTravel = await getById(result.insertId)
+    res.json(newTravel)
+  } catch (error) {
+    res.json({ error: error.message })
+  }
+})
+
+router.put('/:travelId', async (req, res) => {
+  try {
+    const result = await update(req.params.travelId, req.body)
+    const travelUpdated = getById(req.params.travelId)
+    res.json(travelUpdated)
+  } catch (error) {
+    res.json({ error: error.message })
+  }
+})
+
+router.delete('/:travelId', (req, res) => {
+  deleteById(req.params.travelId)
+    .then(result => res.json(result))
+    .catch(err => res.json({ error: err.message }));
+})
 
 
-router.get("/", (req, res) => {
-  res.send("Travel's root");
-});
-
-module.exports = router;
+module.exports = router
