@@ -115,5 +115,6 @@ DELETE http://localhost:3000/api/travels/delete/3
 Travels/Clients -->
 
 ###
-POST http://localhost:3000/api/client/3/travel/2
+POST http://localhost:3000/api/travel/3/client/2
+
 
