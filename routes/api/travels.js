@@ -45,6 +45,7 @@ router.post("/:idTravel/client/:idClient", async (req, res) => {
   } catch (err) {
     res.send({ error: err.message })
   }
+
 })
 
 

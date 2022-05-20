@@ -38,6 +38,4 @@ router.delete('/:clientId', (req, res) => {
 })
 
 
-
-
 module.exports = router

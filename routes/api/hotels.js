@@ -41,4 +41,5 @@ router.delete('/:hotelId', (req, res) => {
     .catch(error => res.json({ error: error.message }))
 });
 
+
 module.exports = router;
