@@ -12,6 +12,19 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
+// Environment file
+require('dotenv').config();
+
+// DataBase config.
+require('./config/db');
+
+// DataBase test
+
+// db.query('SELECT * from CLIENTES', (err, result) => {
+//   console.log(err);
+//   console.log(result);
+// })
+
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 

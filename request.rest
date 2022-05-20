@@ -1,0 +1,30 @@
+Clients -->
+
+###
+GET http://localhost:3000/api/Clients
+Content-Type: application/json
+
+{
+    "nombre": "Mario",
+    "apellidos": "Vaquerizo",
+    "direccion": "Calle Viyuela",
+    "telefono": "955555555",
+    "email": "client@client.com",
+    "fecha_nacimiento": "1936-03-15",
+    "dni": "56743234Y"
+}
+
+###
+PUT http://localhost:3000/api/Clients/2
+
+Content-Type: application/json
+
+{
+    "nombre": "Mario",
+    "apellidos": "Conde",
+    "direccion": "Calle del destrozo, 5",
+    "telefono": "696969692",
+    "email": "client2@client.com",
+    "fecha_nacimiento": "1959-06-12",
+    "dni": "56744534Y"
+}
