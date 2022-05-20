@@ -82,4 +82,34 @@ Content-Type: application/json
 
 DELETE http://localhost:3000/api/hotels/3
 
+Travels -->
+
 ###
+GET http://localhost:3000/api/travels
+
+###
+POST http://localhost:3000/api/travels
+Content-Type: application/json
+
+{
+    "fecha_salida": "03-10-2019",
+    "fecha_vuelta": "05-03-2019", 
+    "id_vuelo_ida": "43564365GFH4765467", 
+    "id_vuelo_vuelta": "45654HGF6757876", 
+    "hotel": "Hostal el torero"
+}
+
+###
+PUT http://localhost:3000/api/travels/2 
+Content-Type: application/json
+
+{
+    "fecha_salida": "02-10-2019",
+    "fecha_vuelta": "06-03-2019", 
+    "id_vuelo_ida": "65756HGFH7567", 
+    "id_vuelo_vuelta": "456756GHF77657", 
+    "hotel": "Hostal el torero"
+}
+
+###
+DELETE http://localhost:3000/api/travels/3
