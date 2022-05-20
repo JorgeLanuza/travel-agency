@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const result = await create(req.body)
+    const newClient = await getById(result.insertId)
     res.json(result.insertId)
   } catch (error) {
     res.json({ error: error.message })
